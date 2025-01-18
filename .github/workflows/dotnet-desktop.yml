@@ -19,7 +19,8 @@ jobs:
         dotnet-version: '7.x'
 
     - name: Publish Application
-      run: dotnet publish ./YourProject/YourProject.csproj -c Release -r win-x64 --self-contained -p:PublishSingleFile=true -p:PublishTrimmed=true -o publish/
+      run: dotnet publish ./GmailDeleteUI/GmailDeleteUI.csproj -c Release -r win-x64 --self-contained -p:PublishSingleFile=true -p:PublishTrimmed=true -o publish/
+
 
 
     - name: Upload Release Assets

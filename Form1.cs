@@ -26,7 +26,7 @@ namespace GmailDeleteUI
             try
             {
                 string result = gmailHelper.TrashAllFromSender(senderEmail);
-                richTextBox1.AppendText(result + "\n");
+                richTextBox1.AppendText(result + "\n"); // Test
             }
             catch (Exception ex)
             {

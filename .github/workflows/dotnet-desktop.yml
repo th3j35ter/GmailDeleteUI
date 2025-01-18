@@ -21,8 +21,6 @@ jobs:
     - name: Publish Application
       run: dotnet publish ./GmailDeleteUI.csproj -c Release -r win-x64 --self-contained -p:PublishSingleFile=true -p:PublishTrimmed=true -o publish/
 
-
-
     - name: Upload Release Assets
       uses: ncipollo/release-action@v1
       with:
@@ -31,5 +29,3 @@ jobs:
         tag: ${{ github.ref_name }}
         name: ${{ github.ref_name }}
         body: "Automatically generated release."
-
-

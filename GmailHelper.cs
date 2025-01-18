@@ -48,7 +48,7 @@ public class GmailHelper
     {
         string query = $"from:{senderEmail}";
         var allMessageIds = new List<string>();
-        string pageToken = null;
+        string pageToken = "";
 
         do
         {

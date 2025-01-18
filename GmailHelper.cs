@@ -20,13 +20,17 @@ public class GmailHelper
 
     private GmailService GetGmailService()
     {
+        if (!File.Exists("credentials.json"))
+        {
+            throw new FileNotFoundException("The 'credentials.json' file is missing. Please add it to the application directory.");
+        }
         UserCredential credential;
 
         using (var stream = new FileStream("credentials.json", FileMode.Open, FileAccess.Read))
         {
             string credPath = "token.json";
             credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
-                GoogleClientSecrets.Load(stream).Secrets,
+                GoogleClientSecrets.FromStream(stream).Secrets,
                 new[] { GmailService.Scope.GmailModify },
                 "user",
                 CancellationToken.None,
